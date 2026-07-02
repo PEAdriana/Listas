@@ -126,6 +126,52 @@ public class ArrayList<E> implements Lista<E> {
         asegurarGC();
     }
 
+
+
+   // Indica al compilador que no muestre la advertencia
+// por la conversión (cast) de Object[] a E[].
+// Esta advertencia aparece porque Java no puede verificar
+// completamente el tipo genérico durante la compilación.
+@SuppressWarnings("unchecked")
+
+// Indica que este método sobrescribe uno definido
+// en una interfaz o clase padre.
+@Override
+public E[] convertirArreglo() {
+
+    // Se crea un nuevo arreglo de tipo Object
+    // cuyo tamaño es exactamente igual al número
+    // de elementos almacenados en la lista (indice).
+    //
+    // No se utiliza datos.length porque ese valor
+    // representa la capacidad total del arreglo y
+    // puede contener posiciones vacías.
+    Object[] aux = new Object[indice];
+
+    // Copia los elementos del arreglo interno "datos"
+    // hacia el nuevo arreglo "aux".
+    //
+    // Parámetros:
+    // datos   -> arreglo origen.
+    // 0       -> posición inicial desde donde copiar.
+    // aux     -> arreglo destino.
+    // 0       -> posición inicial donde se pegarán.
+    // indice  -> cantidad de elementos que se copiarán.
+    //
+    // Solo se copian los elementos válidos de la lista,
+    // ignorando las posiciones vacías del arreglo original.
+    System.arraycopy(datos, 0, aux, 0, indice);
+
+    // El arreglo "aux" es de tipo Object[].
+    // Sin embargo, el método debe regresar un arreglo
+    // del tipo genérico E[].
+    //
+    // Por ello se realiza una conversión (cast)
+    // de Object[] a E[] antes de devolverlo.
+    return (E[]) aux;
+}
+
+
     //Un Iterator : Permite recorrer la lista usando un Iterator.
         // Un Iterator es un objeto que permite recorrer una colección
     // elemento por elemento, sin necesidad de acceder directamente
