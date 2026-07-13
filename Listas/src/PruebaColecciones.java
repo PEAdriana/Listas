@@ -2,14 +2,6 @@ public class PruebaColecciones {
 
     public static void main(String[] args) {
 
-
-
-
-
-
-
-
-
         //==========================================================
         // PILA IMPLEMENTADA CON ARRAYLIST
         //==========================================================
@@ -41,20 +33,20 @@ public class PruebaColecciones {
 // Este principio se conoce como "programar contra la interfaz y
 // no contra la implementación", ya que la interfaz controla qué
 // operaciones están disponibles para el usuario.
-         */
-        Pila<Integer> pilaArray =
-                new PilaLista<>(new ArrayList<Integer>());
+        
+        Pila<Integer> pilaA =
+                new PilaArray <>(new ArrayList<Integer>());
 
-        pilaArray.apilar(10);
-        pilaArray.apilar(20);
-        pilaArray.apilar(30);
+        pilaA.apilar(10);
+        pilaA.apilar(20);
+        pilaA.apilar(30);
 
         System.out.println("Elemento en la cima: "
-                + pilaArray.consultarCima());
+                + pilaA.consultarCima());
 
-        while (!pilaArray.esVacia()) {
+        while (!pilaA.esVacia()) {
             System.out.println("Desapilando: "
-                    + pilaArray.desapilar());
+                    + pilaA.desapilar());
         }
 
         /*
@@ -62,9 +54,9 @@ public class PruebaColecciones {
          * pertenecen a Lista y NO forman parte de la interfaz Pila.
          */
 
-        // pilaArray.agregarPosicion(50,1);
-        // pilaArray.eliminarElementoInicio();
-        // pilaArray.consultar(0);
+        // pilaA.agregarPosicion(50,1);
+        // pilaA.eliminarElementoInicio();
+        // pilaA.consultar(0);
 
 
         //==========================================================
@@ -81,19 +73,19 @@ public class PruebaColecciones {
          * Esto demuestra que programamos utilizando la interfaz Pila
          * y no una implementación específica.
          */
-  /*     Pila<Integer> pilaLinked =
-                new PilaLista<>(new LinkedList<Integer>());
+  /*     Pila<Integer> pilaL =
+                new PilaLinked<>(new LinkedList<Integer>());
 
-        pilaLinked.apilar(100);
-        pilaLinked.apilar(200);
-        pilaLinked.apilar(300);
+        pilaL.apilar(100);
+        pilaL.apilar(200);
+        pilaL.apilar(300);
 
         System.out.println("Elemento en la cima: "
-                + pilaLinked.consultarCima());
+                + pilaL.consultarCima());
 
-        while (!pilaLinked.esVacia()) {
+        while (!pilaL.esVacia()) {
             System.out.println("Desapilando: "
-                    + pilaLinked.desapilar());
+                    + pilaL.desapilar());
         }
 
 
@@ -109,17 +101,17 @@ public class PruebaColecciones {
          * Aunque internamente utilice una Lista, únicamente estarán
          * disponibles las operaciones propias de una cola.
          */
-     /*   Cola<String> colaArray =
-                new ColaLista<>(new ArrayList<String>());
+     /*   Cola<String> colaA =
+                new ColaArray<>(new ArrayList<String>());
 
-        colaArray.encolar("Ana");
-        colaArray.encolar("Luis");
-        colaArray.encolar("Pedro");
+        colaA.encolar("Ana");
+        colaA.encolar("Luis");
+        colaA.encolar("Pedro");
 
         System.out.println("Elemento al frente: "
-                + colaArray.consultarFrente());
+                + colaA.consultarFrente());
 
-        while (!colaArray.esVacia()) {
+        while (!colaA.esVacia()) {
             System.out.println("Desencolando: "
                     + colaArray.desencolar());
         }
@@ -129,9 +121,9 @@ public class PruebaColecciones {
          * la interfaz Lista y no a la interfaz Cola.
          */
 
-        // colaArray.agregarInicio("Carlos");
-        // colaArray.agregarPosicion("Laura",2);
-        // colaArray.eliminarElementoFinal();
+        // colaA.agregarInicio("Carlos");
+        // colaA.agregarPosicion("Laura",2);
+        // colaA.eliminarElementoFinal();
 
 
         //==========================================================
@@ -144,19 +136,19 @@ public class PruebaColecciones {
          * Nuevamente únicamente cambiamos la implementación interna.
          * Todo el código que utiliza la cola permanece igual.
          */
-        /*Cola<String> colaLinked =
-                new ColaLista<>(new LinkedList<String>());
+        /*Cola<String> colaL =
+                new ColaLinked<>(new LinkedList<String>());
 
-        colaLinked.encolar("María");
-        colaLinked.encolar("José");
-        colaLinked.encolar("Laura");
+        colaL.encolar("María");
+        colaL.encolar("José");
+        colaL.encolar("Laura");
 
         System.out.println("Elemento al frente: "
-                + colaLinked.consultarFrente());
+                + colaL.consultarFrente());
 
-        while (!colaLinked.esVacia()) {
+        while (!colaL.esVacia()) {
             System.out.println("Desencolando: "
-                    + colaLinked.desencolar());
+                    + colaL.desencolar());
         }
 
         //==========================================================
