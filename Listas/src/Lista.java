@@ -1,5 +1,5 @@
-public interface Lista<E> extends Iterable<E> {
-
+public interface Lista<E> extends Iterable<E> 
+{
   //Recuerden implementar todos los métodos en ArrayList.
 	/**
 	 * Agrega un elemento al final de la coleccion
@@ -68,5 +68,4 @@ public interface Lista<E> extends Iterable<E> {
 	 * @param posicion Posicion del elemento a regresar
 	 */
 	public E consultar(int posicion);
-	
 }
